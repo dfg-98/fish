@@ -60,13 +60,14 @@ alias dsou='sudo'
 
 alias ubuntu-ui-toolkit-gallery='qmlscene /usr/lib/x86_64-linux-gnu/qt5/examples/ubuntu-ui-toolkit/examples/ubuntu-ui-toolkit-gallery/ubuntu-ui-toolkit-gallery.qml'
 
+# Install pip packages from UCI repos
 function pipmiel
 
     python -m pip $argv  --index-url "http://nexus.prod.uci.cu/repository/pypi-proxy/simple/" --trusted-host nexus.prod.uci.cu
 
 end
 
-
+# Function for slice a string
 function slice
 
     set s $argv[1]
@@ -75,26 +76,32 @@ function slice
 
 end
 
+# Prints a csv file with aligned columns
 function pretty_csv 
     column -t -s, -n $argv | less -F -S -X -K
 end
 
+# Compile a .dot file into tex equivalent
 function dtikz
 
    dot2tex -ftikz  --autosize $argv[1]  > (slice $argv[1] 1..-5)".tex"
 
 end
 
+# Django commands
 alias runserver='python manage.py runserver'
 
-set DRF_DOC_PATH $HOME/django-rest-framework
-export CHROME_EXECUTABLE=google-chrome-stable
 
+#################################################################
+# Pyenv initialization 
+#################################################################
 status is-login; and pyenv init --path | source
 status is-interactive; and pyenv init - | source
 status --is-interactive; and pyenv virtualenv-init - | source
+#################################################################
 
 
+# Activate virtualenv in pyenv environments
 function activate
 
     source ~/.pyenv/versions/{$argv[1]}/bin/activate.fish 
