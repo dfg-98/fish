@@ -15,22 +15,12 @@ alias aptsource='sudo vim /etc/apt/sources.list'
 alias remove='sudo apt-get autoremove'
 alias clean='sudo apt-get autoclean'
 alias uplocate='sudo updatedb'
-alias vimbashrc='sudo vim /home/dario/.bashrc'
-alias vimprofile='sudo vim /home/dario/.profile'
-alias kiwix='/media/data/Wikipedia\ 2015/kiwix1/kiwix'
-alias gogs='/home/elessar/Apps/gogs/gogs/gogs'
 alias off='poweroff'
 
 alias search='sudo apt-cache search '
 alias installs='sudo apt-get install '
 alias show='sudo apt-cache show '
 
-alias pipw='sudo pip install -f ~/wheels --no-index'
-alias pipw3='sudo pip3 install -f ~/wheels --no-index'
-
-### MIO ####
-alias cppref='okular /media/dario/_dde_data/Programming/C++/CPP_Reference_Card.pdf'
-alias porndisk='vlc /media/dario/Data/Lia/new/'
 
 ### Mistakes ###
 
@@ -76,9 +66,6 @@ function pipmiel
 
 end
 
-alias pipinstall='python -m pip install --no-index --find-links=file:///media/dario/_dde_data/Programming/Python/Site/packages/ '
-
-set ANDROID_SDK_HOME ~/Android/Sdk
 
 function slice
 
